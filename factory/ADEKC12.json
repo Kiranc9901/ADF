@@ -1,0 +1,9 @@
+{
+	"name": "ADEKC12",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "84c4c1f0-f784-49ba-8d4c-9bd99614bf13",
+		"tenantId": "d173b7cf-2d91-410c-8f94-677b3421f35f"
+	}
+}
