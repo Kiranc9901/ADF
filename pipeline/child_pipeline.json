@@ -98,7 +98,8 @@
 										"folderName": {
 											"value": "Customer/@{formatDateTime(utcNow(),'yyyy')}/@{formatDateTime(utcNow(),'MM')}/@{formatDateTime(utcNow(),'dd')}/@{formatDateTime(utcNow(),'hh')}/@{formatDateTime(utcNow(),'mm')}/@{formatDateTime(utcNow(),'ss')}",
 											"type": "Expression"
-										}
+										},
+										"fileName": "customer"
 									}
 								}
 							]
