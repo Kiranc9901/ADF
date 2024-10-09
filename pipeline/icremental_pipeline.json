@@ -87,7 +87,7 @@
 					"source": {
 						"type": "AzureSqlSource",
 						"sqlReaderQuery": {
-							"value": "select * from saleslt.customer where modifieddate > '@{activity('Get Time from HWM').output.firstRow.Prop_0}' and modifieddate <= '@{activity('Get Time from Table').output.firstRow.lastmodified}'",
+							"value": "select * from saleslt.customer where modifieddate > '@{activity('Get Time from HWM').output.firstRow.Prop_0}' and modifieddate <= '@{activity('Get Time from Table').output.firstRow.latestmodified}'",
 							"type": "Expression"
 						},
 						"queryTimeout": "02:00:00",
