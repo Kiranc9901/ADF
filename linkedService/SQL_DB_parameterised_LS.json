@@ -1,0 +1,17 @@
+{
+	"name": "SQL_DB_parameterised_LS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"User name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=kiranc9901.database.windows.net;initial catalog=mission100kiranc30062000DB;user id=\"@{linkedService().User name}\"",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDBGMkE0RDg5LUQyRDYtNEM2My1CODY5LTYxNzIzMDFCRjI5N181NWRiZDc0My0zOGZkLTQ1NTgtYjc2Yi1kZDgwZGY2ZTc4N2YiDQp9"
+		}
+	}
+}
