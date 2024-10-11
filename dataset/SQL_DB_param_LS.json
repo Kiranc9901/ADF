@@ -1,0 +1,23 @@
+{
+	"name": "SQL_DB_param_LS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQL_DB_parameterised_LS",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"User name": {
+					"value": "@dataset().usernameforLS",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"usernameforLS": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
