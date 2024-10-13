@@ -13,11 +13,20 @@
 		},
 		"parameters": {
 			"usernameforLS": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "kc12"
+			},
+			"table": {
+				"type": "string",
+				"defaultValue": "customer"
 			}
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"schema": "SalesLT",
+			"table": "Customer"
+		}
 	}
 }
