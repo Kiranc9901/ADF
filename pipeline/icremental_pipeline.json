@@ -122,7 +122,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "ADLS_CSV_DS",
+						"referenceName": "ADLS_Customer_CSV_DS",
 						"type": "DatasetReference"
 					}
 				]

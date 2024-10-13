@@ -1,5 +1,5 @@
 {
-	"name": "ADLS_Customer_CSV_DS",
+	"name": "delimeter_change_DS",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Landing_Container_LS",
@@ -10,16 +10,13 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "SalesLT.Customer.json",
-				"folderPath": "customerjson",
 				"fileSystem": "landing"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "|",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": []
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }

@@ -1,9 +1,9 @@
 {
-	"name": "IngestSqlDB_Customer",
+	"name": "Copy_Customer_To_CSV_Pipe",
 	"properties": {
 		"activities": [
 			{
-				"name": "CopySQLtoADLS",
+				"name": "Copy_Customer_To_CSV_Pipe",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -43,20 +43,22 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SQL_db_customer_dataset",
-						"type": "DatasetReference"
+						"referenceName": "SQL_DB_generic_DS",
+						"type": "DatasetReference",
+						"parameters": {
+							"table_name": "customer",
+							"db_name": "saleslt"
+						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "ADLS_Customer_CSV_DS",
+						"referenceName": "delimeter_change_DS",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
-		"annotations": [],
-		"lastPublishTime": "2024-10-02T17:39:49Z"
-	},
-	"type": "Microsoft.DataFactory/factories/pipelines"
+		"annotations": []
+	}
 }

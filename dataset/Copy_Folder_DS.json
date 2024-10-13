@@ -1,5 +1,5 @@
 {
-	"name": "ADLS_Customer_CSV_DS",
+	"name": "Copy_Folder_DS",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Landing_Container_LS",
@@ -10,8 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "SalesLT.Customer.json",
-				"folderPath": "customerjson",
+				"folderPath": "csv2",
 				"fileSystem": "landing"
 			},
 			"columnDelimiter": ",",
@@ -20,6 +19,5 @@
 			"quoteChar": "\""
 		},
 		"schema": []
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }
