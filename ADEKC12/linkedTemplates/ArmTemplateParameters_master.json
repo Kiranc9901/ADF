@@ -8,11 +8,20 @@
 		"ADLSlinkedService_accountKey": {
 			"value": ""
 		},
+		"Landing_Container_LS_accountKey": {
+			"value": ""
+		},
+		"SQL_DB_parameterised_LS_connectionString": {
+			"value": ""
+		},
 		"SqldbNameService_connectionString": {
 			"value": ""
 		},
 		"ADLSlinkedService_properties_typeProperties_url": {
 			"value": "https://kirancadls.dfs.core.windows.net/"
+		},
+		"Landing_Container_LS_properties_typeProperties_url": {
+			"value": "https://kiranc30062000adls.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"value": ""
