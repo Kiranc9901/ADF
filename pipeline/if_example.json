@@ -22,7 +22,7 @@
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "ProductTableDS",
+						"referenceName": "Product_table_DS",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": true
@@ -87,7 +87,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "ProductTableDS",
+									"referenceName": "Product_table_DS",
 									"type": "DatasetReference"
 								}
 							],

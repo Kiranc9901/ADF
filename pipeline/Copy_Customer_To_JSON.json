@@ -1,9 +1,9 @@
 {
-	"name": "IngestSQLDB_product",
+	"name": "Copy_Customer_To_JSON",
 	"properties": {
 		"activities": [
 			{
-				"name": "Product table SQL to ADLS",
+				"name": "Copy_Customer_To_JSON",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -33,20 +33,21 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Product_table_DS",
-						"type": "DatasetReference"
+						"referenceName": "SQL_DB_generic_DS",
+						"type": "DatasetReference",
+						"parameters": {
+							"db_name": "saleslt"
+						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Json1",
+						"referenceName": "Json2",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
-		"annotations": [],
-		"lastPublishTime": "2024-10-03T10:33:58Z"
-	},
-	"type": "Microsoft.DataFactory/factories/pipelines"
+		"annotations": []
+	}
 }

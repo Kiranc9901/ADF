@@ -91,7 +91,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "ProductTableDS",
+									"referenceName": "Product_table_DS",
 									"type": "DatasetReference"
 								}
 							],

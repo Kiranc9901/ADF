@@ -1,0 +1,21 @@
+{
+	"name": "SQL_DB_generic_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqldbNameService",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"table_name": {
+				"type": "string"
+			},
+			"db_name": {
+				"type": "string",
+				"defaultValue": "saleslt"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}

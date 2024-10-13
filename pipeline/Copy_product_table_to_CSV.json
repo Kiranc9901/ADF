@@ -1,9 +1,9 @@
 {
-	"name": "IngestSQLDB_product",
+	"name": "Copy_product_table_to_CSV",
 	"properties": {
 		"activities": [
 			{
-				"name": "Product table SQL to ADLS",
+				"name": "Copy_ProductTable_To_CSV",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -21,32 +21,43 @@
 						"partitionOption": "None"
 					},
 					"sink": {
-						"type": "JsonSink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
-							"type": "JsonWriteSettings"
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
-						"referenceName": "Product_table_DS",
-						"type": "DatasetReference"
+						"referenceName": "SQL_DB_generic_DS",
+						"type": "DatasetReference",
+						"parameters": {
+							"table_name": "customer"
+						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Json1",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
-		"annotations": [],
-		"lastPublishTime": "2024-10-03T10:33:58Z"
-	},
-	"type": "Microsoft.DataFactory/factories/pipelines"
+		"annotations": []
+	}
 }
