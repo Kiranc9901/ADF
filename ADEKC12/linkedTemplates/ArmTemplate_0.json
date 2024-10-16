@@ -102,6 +102,18 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/P1-C')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ADLS_CSV_Generic_DS')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -656,43 +668,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/SqldbNameService')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SQL_DB_param_LS')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "SQL_DB_parameterised_LS",
-					"type": "LinkedServiceReference",
-					"parameters": {
-						"User name": {
-							"value": "@dataset().usernameforLS",
-							"type": "Expression"
-						}
-					}
-				},
-				"parameters": {
-					"usernameforLS": {
-						"type": "string",
-						"defaultValue": "kc12"
-					},
-					"table": {
-						"type": "string",
-						"defaultValue": "customer"
-					}
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "SalesLT",
-					"table": "Customer"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/SQL_DB_parameterised_LS')]"
 			]
 		}
 	]
