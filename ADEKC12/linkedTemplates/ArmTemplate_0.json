@@ -107,7 +107,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "ADLSlinkedService",
+					"referenceName": "Landing_Container_LS",
 					"type": "LinkedServiceReference"
 				},
 				"parameters": {
@@ -131,7 +131,7 @@
 							"value": "@dataset().fileName",
 							"type": "Expression"
 						},
-						"fileSystem": "container1"
+						"fileSystem": "landing"
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
@@ -141,7 +141,7 @@
 				"schema": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ADLSlinkedService')]"
+				"[concat(variables('factoryId'), '/linkedServices/Landing_Container_LS')]"
 			]
 		},
 		{
