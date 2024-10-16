@@ -2,7 +2,7 @@
 	"name": "ADLS_CSV_Generic_DS",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ADLSlinkedService",
+			"referenceName": "Landing_Container_LS",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -26,7 +26,7 @@
 					"value": "@dataset().fileName",
 					"type": "Expression"
 				},
-				"fileSystem": "container1"
+				"fileSystem": "landing"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
