@@ -10,13 +10,14 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "threshold.txt",
+				"fileName": "file.txt",
 				"fileSystem": "landing"
 			},
 			"columnDelimiter": ",",
+			"encodingName": "UTF-7",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
-			"quoteChar": "\""
+			"quoteChar": "'"
 		},
 		"schema": [
 			{
