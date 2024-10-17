@@ -1,0 +1,9 @@
+{
+	"name": "kirancadfkc12",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ca114a08-cab3-4304-bf94-b0217475f72b",
+		"tenantId": "d173b7cf-2d91-410c-8f94-677b3421f35f"
+	}
+}
