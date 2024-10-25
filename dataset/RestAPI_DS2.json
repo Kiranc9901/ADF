@@ -1,0 +1,24 @@
+{
+	"name": "RestAPI_DS2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestAPI_LS2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"ConuntryURL": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@dataset().ConuntryURL",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
