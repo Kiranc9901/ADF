@@ -17,24 +17,24 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "ggiu",
+						"sqlReaderQuery": "qnjdjd",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "SQL_db_customer_dataset",
+						"referenceName": "Product_table_DS",
 						"type": "DatasetReference"
 					}
 				}
 			},
 			{
-				"name": "send emial",
+				"name": "EMAIL",
 				"type": "WebActivity",
 				"dependsOn": [
 					{
 						"activity": "Lookup1",
 						"dependencyConditions": [
-							"Succeeded"
+							"Failed"
 						]
 					}
 				],
