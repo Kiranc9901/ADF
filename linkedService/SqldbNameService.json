@@ -7,6 +7,10 @@
 		"typeProperties": {
 			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=kiranc9901.database.windows.net;initial catalog=mission100kiranc30062000DB;user id=kc12",
 			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDBGMkE0RDg5LUQyRDYtNEM2My1CODY5LTYxNzIzMDFCRjI5N19mYTNjZjE0Yi1lNzFkLTQyOTQtYmMzOS03MjNhY2I4YmU0ODUiDQp9"
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
 		}
 	}
 }
