@@ -1,0 +1,19 @@
+{
+	"name": "Json_prodcuct_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Landing_Container_LS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "product",
+				"fileSystem": "landing"
+			}
+		},
+		"schema": {}
+	}
+}
