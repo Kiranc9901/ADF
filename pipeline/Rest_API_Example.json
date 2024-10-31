@@ -56,7 +56,11 @@
 				"outputs": [
 					{
 						"referenceName": "ADLS_CSV_Generic_DS",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"folderName": "bh",
+							"fileName": "bh"
+						}
 					}
 				]
 			}
