@@ -50,7 +50,17 @@
 				"inputs": [
 					{
 						"referenceName": "ADLS_CSV_Generic_DS",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"folderName": {
+								"value": "bv",
+								"type": "Expression"
+							},
+							"fileName": {
+								"value": "gg",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
