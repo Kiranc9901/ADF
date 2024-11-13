@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "EMP_DS",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "GEN2_DS",
@@ -20,15 +20,15 @@
 		},
 		"schema": [
 			{
-				"name": "id ",
+				"name": "id",
 				"type": "String"
 			},
 			{
-				"name": " name ",
+				"name": "name",
 				"type": "String"
 			},
 			{
-				"name": " city",
+				"name": "city",
 				"type": "String"
 			}
 		]
