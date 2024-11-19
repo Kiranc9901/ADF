@@ -1,0 +1,305 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "kc12"
+		},
+		"ADLSlinkedService_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLSlinkedService'"
+		},
+		"AZ_SQL_DS_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AZ_SQL_DS'"
+		},
+		"AzureSqlDatabase1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
+		},
+		"GEN2_DS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'GEN2_DS'"
+		},
+		"Landing_Container_LS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Landing_Container_LS'"
+		},
+		"SCD_Gen2_DS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'SCD_Gen2_DS'"
+		},
+		"SQL_DB_DS_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SQL_DB_DS'"
+		},
+		"SQL_DB_parameterised_LS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SQL_DB_parameterised_LS'"
+		},
+		"SqldbNameService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqldbNameService'"
+		},
+		"synapse5wq7j2m-WorkspaceDefaultSqlServer_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'synapse5wq7j2m-WorkspaceDefaultSqlServer'",
+			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:synapse5wq7j2m.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"ADLSlinkedService_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://kirancadls.dfs.core.windows.net/"
+		},
+		"AZ_SQL_DS_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "kc12.database.windows.net"
+		},
+		"AZ_SQL_DS_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "kc12"
+		},
+		"AZ_SQL_DS_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "kc12"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "kc12.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "kc12"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "kc12"
+		},
+		"GEN2_DS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://landing1.dfs.core.windows.net/"
+		},
+		"Landing_Container_LS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://kiranc30062000adls.dfs.core.windows.net/"
+		},
+		"RestAPI_LS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://restcountries.com/v3.1/all"
+		},
+		"RestAPI_LS2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://restcountries.com/v3.1/name/"
+		},
+		"SCD_Gen2_DS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://landing1.dfs.core.windows.net/"
+		},
+		"SQL_DB_DS_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "kc12.database.windows.net"
+		},
+		"SQL_DB_DS_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "kc12"
+		},
+		"SQL_DB_DS_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "kc12"
+		},
+		"synapse5wq7j2m-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://datalake5wq7j2m.dfs.core.windows.net"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "kc12_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ADLSlinkedService_accountKey": {
+						"value": "[parameters('ADLSlinkedService_accountKey')]"
+					},
+					"AZ_SQL_DS_password": {
+						"value": "[parameters('AZ_SQL_DS_password')]"
+					},
+					"AzureSqlDatabase1_password": {
+						"value": "[parameters('AzureSqlDatabase1_password')]"
+					},
+					"GEN2_DS_accountKey": {
+						"value": "[parameters('GEN2_DS_accountKey')]"
+					},
+					"Landing_Container_LS_accountKey": {
+						"value": "[parameters('Landing_Container_LS_accountKey')]"
+					},
+					"SCD_Gen2_DS_accountKey": {
+						"value": "[parameters('SCD_Gen2_DS_accountKey')]"
+					},
+					"SQL_DB_DS_password": {
+						"value": "[parameters('SQL_DB_DS_password')]"
+					},
+					"SQL_DB_parameterised_LS_connectionString": {
+						"value": "[parameters('SQL_DB_parameterised_LS_connectionString')]"
+					},
+					"ADLSlinkedService_properties_typeProperties_url": {
+						"value": "[parameters('ADLSlinkedService_properties_typeProperties_url')]"
+					},
+					"AZ_SQL_DS_properties_typeProperties_server": {
+						"value": "[parameters('AZ_SQL_DS_properties_typeProperties_server')]"
+					},
+					"AZ_SQL_DS_properties_typeProperties_database": {
+						"value": "[parameters('AZ_SQL_DS_properties_typeProperties_database')]"
+					},
+					"AZ_SQL_DS_properties_typeProperties_userName": {
+						"value": "[parameters('AZ_SQL_DS_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"GEN2_DS_properties_typeProperties_url": {
+						"value": "[parameters('GEN2_DS_properties_typeProperties_url')]"
+					},
+					"Landing_Container_LS_properties_typeProperties_url": {
+						"value": "[parameters('Landing_Container_LS_properties_typeProperties_url')]"
+					},
+					"RestAPI_LS_properties_typeProperties_url": {
+						"value": "[parameters('RestAPI_LS_properties_typeProperties_url')]"
+					},
+					"RestAPI_LS2_properties_typeProperties_url": {
+						"value": "[parameters('RestAPI_LS2_properties_typeProperties_url')]"
+					},
+					"SCD_Gen2_DS_properties_typeProperties_url": {
+						"value": "[parameters('SCD_Gen2_DS_properties_typeProperties_url')]"
+					},
+					"SQL_DB_DS_properties_typeProperties_server": {
+						"value": "[parameters('SQL_DB_DS_properties_typeProperties_server')]"
+					},
+					"SQL_DB_DS_properties_typeProperties_database": {
+						"value": "[parameters('SQL_DB_DS_properties_typeProperties_database')]"
+					},
+					"SQL_DB_DS_properties_typeProperties_userName": {
+						"value": "[parameters('SQL_DB_DS_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "kc12_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"SqldbNameService_connectionString": {
+						"value": "[parameters('SqldbNameService_connectionString')]"
+					},
+					"synapse5wq7j2m-WorkspaceDefaultSqlServer_connectionString": {
+						"value": "[parameters('synapse5wq7j2m-WorkspaceDefaultSqlServer_connectionString')]"
+					},
+					"synapse5wq7j2m-WorkspaceDefaultStorage_properties_typeProperties_url": {
+						"value": "[parameters('synapse5wq7j2m-WorkspaceDefaultStorage_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'kc12_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "kc12_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'kc12_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "kc12_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'kc12_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "kc12_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'kc12_ArmTemplate_3')]"
+			]
+		}
+	]
+}

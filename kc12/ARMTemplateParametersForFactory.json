@@ -1,0 +1,87 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "kc12"
+		},
+		"ADLSlinkedService_accountKey": {
+			"value": ""
+		},
+		"AZ_SQL_DS_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"GEN2_DS_accountKey": {
+			"value": ""
+		},
+		"Landing_Container_LS_accountKey": {
+			"value": ""
+		},
+		"SCD_Gen2_DS_accountKey": {
+			"value": ""
+		},
+		"SQL_DB_DS_password": {
+			"value": ""
+		},
+		"SQL_DB_parameterised_LS_connectionString": {
+			"value": ""
+		},
+		"SqldbNameService_connectionString": {
+			"value": ""
+		},
+		"synapse5wq7j2m-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:synapse5wq7j2m.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"ADLSlinkedService_properties_typeProperties_url": {
+			"value": "https://kirancadls.dfs.core.windows.net/"
+		},
+		"AZ_SQL_DS_properties_typeProperties_server": {
+			"value": "kc12.database.windows.net"
+		},
+		"AZ_SQL_DS_properties_typeProperties_database": {
+			"value": "kc12"
+		},
+		"AZ_SQL_DS_properties_typeProperties_userName": {
+			"value": "kc12"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "kc12.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "kc12"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "kc12"
+		},
+		"GEN2_DS_properties_typeProperties_url": {
+			"value": "https://landing1.dfs.core.windows.net/"
+		},
+		"Landing_Container_LS_properties_typeProperties_url": {
+			"value": "https://kiranc30062000adls.dfs.core.windows.net/"
+		},
+		"RestAPI_LS_properties_typeProperties_url": {
+			"value": "https://restcountries.com/v3.1/all"
+		},
+		"RestAPI_LS2_properties_typeProperties_url": {
+			"value": "https://restcountries.com/v3.1/name/"
+		},
+		"SCD_Gen2_DS_properties_typeProperties_url": {
+			"value": "https://landing1.dfs.core.windows.net/"
+		},
+		"SQL_DB_DS_properties_typeProperties_server": {
+			"value": "kc12.database.windows.net"
+		},
+		"SQL_DB_DS_properties_typeProperties_database": {
+			"value": "kc12"
+		},
+		"SQL_DB_DS_properties_typeProperties_userName": {
+			"value": "kc12"
+		},
+		"synapse5wq7j2m-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://datalake5wq7j2m.dfs.core.windows.net"
+		}
+	}
+}
