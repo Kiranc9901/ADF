@@ -3,25 +3,15 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase1",
-			"type": "LinkedServiceReference",
-			"parameters": {
-				"Db_name": {
-					"value": "@dataset().DB_name",
-					"type": "Expression"
-				},
-				"Table_name": {
-					"value": "@dataset().Table_name",
-					"type": "Expression"
-				}
-			}
+			"type": "LinkedServiceReference"
 		},
 		"parameters": {
 			"DB_name": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "saleslt"
 			},
 			"Table_name": {
-				"type": "string",
-				"defaultValue": "employee"
+				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -42,8 +32,14 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "employee_scdtype1"
+			"schema": {
+				"value": "@dataset().DB_name",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().Table_name",
+				"type": "Expression"
+			}
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

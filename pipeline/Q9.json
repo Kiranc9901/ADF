@@ -1,5 +1,5 @@
 {
-	"name": "Q1",
+	"name": "Q9",
 	"properties": {
 		"activities": [
 			{
@@ -16,21 +16,31 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select * from [SalesLT].[SalesOrderDetail] where UnitPrice < (select max(UnitPrice) from [SalesLT].[SalesOrderDetail])",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"sink": {
-						"type": "DelimitedTextSink",
+						"type": "DelimitedTextSource",
+						"additionalColumns": [
+							{
+								"name": "Loaddate",
+								"value": {
+									"value": "@utcNow()",
+									"type": "Expression"
+								}
+							}
+						],
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"type": "DelimitedTextReadSettings"
 						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -44,21 +54,17 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference",
-						"parameters": {
-							"DB_name": "SalesLT",
-							"Table_name": "customer"
-						}
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Q1_DS",
+						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference",
 						"parameters": {
-							"folder": "customer",
-							"file_name": "saleslt"
+							"DB_name": "saleslt",
+							"Table_name": "emp_q9"
 						}
 					}
 				]

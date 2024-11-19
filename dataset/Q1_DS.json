@@ -5,12 +5,27 @@
 			"referenceName": "GEN2_DS",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"folder": {
+				"type": "string"
+			},
+			"file_name": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "EmployeeData-5gaVnrIEEP-6EMdx1D0Ws-wsZOrmEgxd-pkZTkIfiCt (1).csv",
+				"fileName": {
+					"value": "@dataset().folder",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().file_name",
+					"type": "Expression"
+				},
 				"fileSystem": "landing"
 			},
 			"columnDelimiter": ",",

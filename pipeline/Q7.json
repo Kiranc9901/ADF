@@ -1,5 +1,5 @@
 {
-	"name": "Q2",
+	"name": "Q7",
 	"properties": {
 		"activities": [
 			{
@@ -45,12 +45,8 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Q1_DS",
-						"type": "DatasetReference",
-						"parameters": {
-							"folder": "saleslt",
-							"file_name": "customer"
-						}
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
@@ -59,10 +55,42 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"DB_name": "saleslt",
-							"Table_name": "Emp_Q2"
+							"Table_name": "emp_q7"
 						}
 					}
 				]
+			},
+			{
+				"name": "Delete1",
+				"type": "Delete",
+				"dependsOn": [
+					{
+						"activity": "Copy data1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					},
+					"enableLogging": false,
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
+					}
+				}
 			}
 		],
 		"annotations": [],

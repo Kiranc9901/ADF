@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "employee.txt",
+				"fileName": "EmployeeData-5gaVnrIEEP-6EMdx1D0Ws-wsZOrmEgxd-pkZTkIfiCt (1).csv",
 				"fileSystem": "landing"
 			},
 			"columnDelimiter": ",",
