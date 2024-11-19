@@ -1,5 +1,5 @@
 {
-	"name": "SCD_TYPE1",
+	"name": "Q2",
 	"properties": {
 		"activities": [
 			{
@@ -28,14 +28,9 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"writeBehavior": "upsert",
-						"upsertSettings": {
-							"useTempDB": true,
-							"keys": [
-								"id"
-							]
-						},
+						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -50,7 +45,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText1",
+						"referenceName": "Q1_DS",
 						"type": "DatasetReference"
 					}
 				],
@@ -60,14 +55,14 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"DB_name": "SalesLT",
-							"Table_name": "employee"
+							"Table_name": "Emp_Q2"
 						}
 					}
 				]
 			}
 		],
 		"annotations": [],
-		"lastPublishTime": "2024-11-19T07:36:32Z"
+		"lastPublishTime": "2024-11-19T07:36:33Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

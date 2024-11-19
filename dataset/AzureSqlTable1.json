@@ -3,7 +3,26 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase1",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"Db_name": {
+					"value": "@dataset().DB_name",
+					"type": "Expression"
+				},
+				"Table_name": {
+					"value": "@dataset().Table_name",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"DB_name": {
+				"type": "string"
+			},
+			"Table_name": {
+				"type": "string",
+				"defaultValue": "employee"
+			}
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",

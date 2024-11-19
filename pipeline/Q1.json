@@ -1,5 +1,5 @@
 {
-	"name": "SCD_TYPE1",
+	"name": "Q1",
 	"properties": {
 		"activities": [
 			{
@@ -16,27 +16,21 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select * from [SalesLT].[SalesOrderDetail] where UnitPrice < (select max(UnitPrice) from [SalesLT].[SalesOrderDetail])",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
 					},
 					"sink": {
-						"type": "AzureSqlSink",
-						"writeBehavior": "upsert",
-						"upsertSettings": {
-							"useTempDB": true,
-							"keys": [
-								"id"
-							]
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
 						},
-						"sqlWriterUseTableLock": false,
-						"disableMetricsCollection": false
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
 					},
 					"enableStaging": false,
 					"translator": {
@@ -50,24 +44,23 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText1",
-						"type": "DatasetReference"
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference",
+						"parameters": {
+							"DB_name": "SalesLT"
+						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference",
-						"parameters": {
-							"DB_name": "SalesLT",
-							"Table_name": "employee"
-						}
+						"referenceName": "Q1_DS",
+						"type": "DatasetReference"
 					}
 				]
 			}
 		],
 		"annotations": [],
-		"lastPublishTime": "2024-11-19T07:36:32Z"
+		"lastPublishTime": "2024-11-19T07:36:33Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }
